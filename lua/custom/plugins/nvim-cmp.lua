@@ -101,7 +101,7 @@ return { -- Autocompletion
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
       },
-      sources = {
+      sources = cmp.config.sources({
         {
           name = 'lazydev',
           -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
@@ -109,9 +109,25 @@ return { -- Autocompletion
         },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
-        { name = 'path' },
+        -- { name = 'luasnip' }, -- For luasnip users.
+        -- { name = 'snippy' }, -- For snippy users.
+        -- { name = 'ultisnips' }, -- For ultisnips users.
+      }, {
         { name = 'buffer' },
-      },
+        { name = 'path' },
+      }),
+      -- sources = cmp.config.sources({
+      --   {
+      --     name = 'lazydev',
+      --     -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
+      --     group_index = 0,
+      --   },
+      --   { name = 'nvim_lsp' },
+      --   { name = 'luasnip' },
+      --   { name = 'path' },
+      -- },
+      --   { name = 'buffer' },
+      -- }),
     }
   end,
 }

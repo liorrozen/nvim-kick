@@ -139,10 +139,14 @@ return {
       vim.keymap.set('n', '<space>b', dap.toggle_breakpoint)
       vim.keymap.set('n', '<space>gb', dap.run_to_cursor)
 
-      -- Eval var under cursor
-      vim.keymap.set('n', '<space>?', function()
-        require('dapui').eval(nil, { enter = true })
-      end)
+      vim.api.nvim_create_user_command(
+        'Breakpoints', -- Custom command name
+        function()
+          require('dap').list_breakpoints()
+          vim.cmd 'Telescope quickfix'
+        end,
+        {}
+      )
 
       vim.keymap.set('n', '<F2>', dap.continue)
       vim.keymap.set('n', '<F3>', ui.toggle)
