@@ -1,4 +1,3 @@
--- return {}
 return {
   'nvim-neo-tree/neo-tree.nvim',
   branch = 'v3.x',
@@ -11,22 +10,22 @@ return {
   config = function()
     require('neo-tree').setup {
       close_if_last_window = true,
-    }
-  end,
-  opts = {
-    filesystem = {
       window = {
-        mapping_options = {
-          noremap = true,
-          nowait = false,
-        },
         mappings = {
           ['/'] = {},
         },
+        filesystem = {
+          window = {
+            mapping_options = {
+              noremap = true,
+              nowait = false,
+            },
+          },
+        },
+        keys = {
+          { '/', false }, -- Unbinds the default / key for Neo-tree
+        },
       },
-    },
-  },
-  keys = {
-    { '/', false }, -- Unbinds the default / key for Neo-tree
-  },
+    }
+  end,
 }

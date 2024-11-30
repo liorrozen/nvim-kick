@@ -54,6 +54,11 @@ return { -- Fuzzy Finder (files, lsp, etc)
       --   },
       -- },
       -- pickers = {}
+      --
+      defaults = {
+        layout_strategy = 'vertical',
+        -- layout_config = { height = 0.95 },
+      },
       extensions = {
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
