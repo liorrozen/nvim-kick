@@ -50,21 +50,21 @@ return {
             elements = {
               {
                 id = 'scopes',
-                size = 0.25,
+                size = 0.8,
               },
               {
                 id = 'breakpoints',
-                size = 0.25,
+                size = 0.2,
               },
             },
             position = 'left',
-            size = 40,
+            size = 10,
           },
           {
             elements = {
               {
                 id = 'repl',
-                size = 0.5,
+                size = 0.9,
               },
             },
             position = 'bottom',

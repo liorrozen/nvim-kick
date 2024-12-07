@@ -13,7 +13,6 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
 return {
   'tpope/vim-fugitive',
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  'eandrju/cellular-automaton.nvim',
   'MaximilianLloyd/ascii.nvim',
   { 'Bilal2453/luvit-meta', lazy = true },
 }

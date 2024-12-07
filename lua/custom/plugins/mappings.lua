@@ -23,9 +23,6 @@ vim.keymap.set('n', '[e', 'mz:m+<CR>`z==')
 vim.keymap.set('i', '[e', '<Esc>:m+<CR>==gi')
 vim.keymap.set('v', '[e', ":m'>+<CR>gv=`<my`>mzgv`yo`z")
 
--- Make it rain
-vim.keymap.set('n', '<leader>fml', '<cmd>CellularAutomaton make_it_rain<CR>')
-
 -- Quick saves
 vim.keymap.set('n', '<LEADER>w', ':w<CR>')
 
