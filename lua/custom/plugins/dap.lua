@@ -1,3 +1,57 @@
+-- local function list_all_buffers()
+--   local buffers = {}
+--   for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+--     -- Get buffer info
+--     local bufname = vim.api.nvim_buf_get_name(bufnr)
+--     local listed = vim.api.nvim_buf_get_option(bufnr, 'buflisted')
+--     local loaded = vim.api.nvim_buf_is_loaded(bufnr)
+--
+--     -- Add all buffers, even if hidden/unlisted
+--     table.insert(buffers, bufnr, name = bufname, listed = listed, loaded = loaded })
+--   end
+--   return buffers
+-- end
+--
+-- local function find_buffer_by_partial_name(partial_name)
+--   for _, bufnr in ipairs(list_all_buffers()) do
+--     local bufname = vim.api.nvim_buf_get_name(bufnr)
+--     if bufname:match(partial_name) then
+--       return bufnr -- Return the first matching buffer
+--     end
+--   end
+--   return -1 -- Return -1 if no match is found
+-- end
+--
+-- local function run_on_buffer()
+--   local bufname = 'dap-repl' -- Change this to your desired buffer name
+--   local bufnr = find_buffer_by_partial_name(bufname)
+--
+--   if bufnr ~= -1 and vim.api.nvim_buf_is_loaded(bufnr) then
+--     local mode = vim.fn.mode()
+--     if mode == 'n' then -- Only run if in Normal mode
+--       vim.api.nvim_buf_call(bufnr, function()
+--         -- local current_buf = vim.api.nvim_get_current_buf() -- Save the current buffer
+--
+--         -- Switch to target buffer
+--         -- vim.api.nvim_set_current_buf(bufnr)
+--
+--         -- Simulate pressing "G" to scroll to the bottom
+--         -- bufnr = vim.api.nvim_get_current_buf() -- Save the current buffer
+--         vim.api.nvim_feedkeys('G', 'n', false)
+--
+--         -- Switch back to the original buffer
+--         -- vim.api.nvim_set_current_buf(current_buf)
+--       end)
+--     end
+--   end
+--
+--   -- Reschedule the function to run again in 5000ms (5 seconds)
+--   -- vim.defer_fn(run_on_buffer, 5000)
+-- end
+--
+-- -- Start the loop when Neovim starts
+-- vim.defer_fn(run_on_buffer, 5000)
+
 return {
   {
     'mfussenegger/nvim-dap',
@@ -49,25 +103,25 @@ return {
           {
             elements = {
               {
-                id = 'scopes',
-                size = 0.8,
-              },
-              {
-                id = 'breakpoints',
-                size = 0.2,
-              },
-            },
-            position = 'left',
-            size = 10,
-          },
-          {
-            elements = {
-              {
                 id = 'repl',
                 size = 0.9,
               },
             },
             position = 'bottom',
+            size = 10,
+          },
+          {
+            elements = {
+              {
+                id = 'scopes',
+                size = 0.4,
+              },
+              {
+                id = 'breakpoints',
+                size = 0.4,
+              },
+            },
+            position = 'left',
             size = 10,
           },
         },
@@ -92,18 +146,18 @@ return {
           {
             type = 'python',
             request = 'launch',
-            name = 'cloud_onboarding_view',
-            program = '/Users/lrozen/dev/be3/src/secdo/business_logic/cloud_onboarding/cloud_onboarding_view.py',
+            name = 'caom/main.py',
+            program = '/Users/lrozen/dev/be3/src/secdo/single_tenant_services/caom/main.py',
             pythonPath = 'python',
-            cwd = '/',
+            cwd = '/Users/lrozen/dev/be3/',
           },
           {
             type = 'python',
             request = 'launch',
-            name = 'app',
+            name = 'app.py',
             program = '/Users/lrozen/dev/be3/src/secdo/app.py',
             pythonPath = 'python',
-            cwd = '/',
+            cwd = '/Users/lrozen/dev/be3/',
           },
           {
             type = 'python',
@@ -111,7 +165,15 @@ return {
             name = 'Launch file',
             program = '${file}',
             pythonPath = 'python',
-            cwd = '/',
+            cwd = '/Users/lrozen/dev/be3/',
+          },
+          {
+            type = 'python',
+            request = 'launch',
+            name = 'connector_templates/service.py',
+            program = '/Users/lrozen/dev/be3/src/secdo/business_logic/cloud_onboarding/connector_templates/service.py',
+            pythonPath = 'python',
+            cwd = '/Users/lrozen/dev/be3/',
           },
         },
       }

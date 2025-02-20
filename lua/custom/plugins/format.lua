@@ -12,4 +12,5 @@
 --
 
 -- vim.cmd 'set no' -- foo
+vim.cmd 'set shiftwidth=2'
 return {}

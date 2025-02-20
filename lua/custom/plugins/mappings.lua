@@ -46,5 +46,18 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('n', 't', ':tabnext<cr>', { desc = 'Next [t]ab' })
 vim.keymap.set('n', 'T', ':tabprev<cr>', { desc = 'Previous [T]ab' })
+vim.keymap.set('n', '<LEADER>tt', ':tabc<cr>', { desc = 'Close [t]he [t]ab' })
+
+-- Select whole file
+vim.keymap.set('n', '<leader>a', 'ggVG')
+
+-- Copy selection to system clipboard
+vim.keymap.set('v', '<leader>c', '"+y<ESC>')
+
+-- Paste from system clipboard
+vim.keymap.set('n', '<leader>p', '"+p')
+
+-- Format current buffer as json
+vim.keymap.set('n', '<leader>j', ':set filetype=json<CR>:%!jq<CR>')
 
 return {}

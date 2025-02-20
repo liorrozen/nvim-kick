@@ -15,4 +15,10 @@ return {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'MaximilianLloyd/ascii.nvim',
   { 'Bilal2453/luvit-meta', lazy = true },
+  {
+    'gennaro-tedesco/nvim-jqx',
+    event = { 'BufReadPost' },
+    ft = { 'json', 'yaml' },
+  },
+  'carlsmedstad/vim-bicep',
 }
