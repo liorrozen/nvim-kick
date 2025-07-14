@@ -1,4 +1,5 @@
 return {
+  'alec-gibson/nvim-tetris',
   {
     'eandrju/cellular-automaton.nvim', -- fml (make it rain)
     config = function()
@@ -19,4 +20,15 @@ return {
       }
     end,
   },
+  -- {
+  --   'seandewar/actually-doom.nvim',
+  --   config = function()
+  --     require('actually-doom').setup {
+  --       game = {
+  --         kitty_graphics = true,
+  --         tmux_passthrough = true,
+  --       },
+  --     }
+  --   end,
+  -- },
 }

@@ -210,4 +210,6 @@ return {
       },
     }
   end,
+
+  vim.keymap.set('n', '<leader>qf', ':lua vim.diagnostic.setqflist()<cr>'),
 }
